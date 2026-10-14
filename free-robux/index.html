@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GRATIS ROBOUX!!! 100% ECHT (Parodie)</title>
+<style>
+:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:repeating-linear-gradient(45deg,#ffec00 0 18px,#ffd000 18px 36px);font-family:"Comic Sans MS","Comic Neue","Chalkboard SE",cursive,sans-serif;color:#1a1a1a;text-align:center}
+.ticker{background:#d40000;color:#fff;font-weight:bold;padding:6px 0;overflow:hidden;white-space:nowrap}
+.ticker span{display:inline-block;padding-left:100%;animation:t 14s linear infinite}
+@keyframes t{to{transform:translateX(-100%)}}
+.wrap{max-width:560px;margin:0 auto;padding:16px}
+h1{font-size:clamp(30px,9vw,52px);line-height:1.05;margin:10px 0;color:#e800b4;text-shadow:3px 3px 0 #00e5ff,6px 6px 0 #000;animation:b 1s steps(2) infinite}
+@keyframes b{50%{color:#ff0000}}
+.box{background:#fff;border:5px dashed #e800b4;border-radius:12px;padding:16px;margin:14px 0;box-shadow:6px 6px 0 #000}
+.big{font-size:34px;font-weight:bold;color:#0a8a00}
+.red{color:#d40000;font-weight:bold}
+input,select{width:100%;font:inherit;font-size:18px;padding:10px;border:3px solid #000;border-radius:6px;margin:6px 0}
+button{font:inherit;font-weight:bold;font-size:20px;padding:14px 18px;border:4px solid #000;border-radius:10px;background:#00d26a;color:#000;cursor:pointer;box-shadow:4px 4px 0 #000;width:100%;margin-top:8px}
+button:active{transform:translate(3px,3px);box-shadow:1px 1px 0 #000}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:4px solid #0000ff;outline-offset:2px}
+.bar{height:30px;border:3px solid #000;background:#eee;border-radius:6px;overflow:hidden;margin:10px 0}
+.bar i{display:block;height:100%;width:0;background:repeating-linear-gradient(90deg,#ff0 0 10px,#f80 10px 20px)}
+.cap{display:flex;align-items:center;gap:10px;border:3px solid #888;background:#f4f4f4;padding:10px;text-align:left;margin:8px 0}
+.cap input{width:24px;height:24px;margin:0}
+.hide{display:none}
+.rev{background:#111;color:#0f0;font-family:ui-monospace,Menlo,Consolas,monospace;text-align:left;border-color:#d40000}
+.rev h2{color:#ff3b3b;margin-top:0;font-family:"Comic Sans MS",cursive}
+.rev li{margin:6px 0}
+small{display:block;font-size:11px;color:#333;margin:18px 0 8px}
+@media (prefers-reduced-motion:reduce){h1,.ticker span{animation:none}.ticker span{padding-left:0}}
+</style>
+</head>
+<body>
+<div class="ticker"><span>🔥 EXKLUSIV 🔥 Nur heute: UNENDLICH ROBOUX 🔥 Ein Mann aus Rostock hat 4 Mrd. Roboux bekommen — Eltern HASSEN ihn 🔥 Kein Virus (versprochen) 🔥</span></div>
+<div class="wrap">
+  <h1>GRATIS ROBOUX!!!</h1>
+  <div class="box">
+    <div class="big" id="cnt">999.999.999 Roboux</div>
+    <div>warten auf dich, <span class="red">jetzt sofort</span>!</div>
+    <div>⏰ Angebot endet in <b class="red" id="timer">00:00:59</b></div>
+    <div>👥 <b id="users">1.337</b> Leute schauen sich diese Seite gerade an (wahrscheinlich)</div>
+  </div>
+
+  <div class="box" id="s1">
+    <b>Schritt 1:</b> Gib deinen Spielernamen ein
+    <input id="name" placeholder="z. B. xX_NoobSlayer_Xx" maxlength="24" autocomplete="off">
+    <label for="amt"><b>Wie viele Roboux willst du?</b></label>
+    <select id="amt">
+      <option>10.000 (bescheiden)</option>
+      <option>1.000.000 (normal)</option>
+      <option selected>999.999.999 (ich bin gierig)</option>
+      <option>∞ (verdächtig)</option>
+    </select>
+    <div class="cap"><input type="checkbox" id="ok"><label for="ok">Ich bin kein Roboter (ich bin ein Roboux)</label></div>
+    <button id="go">ROBOUX JETZT ABHOLEN 💰</button>
+  </div>
+
+  <div class="box hide" id="s2">
+    <b id="msg">Verbinde mit Roboux-Server…</b>
+    <div class="bar"><i id="fill"></i></div>
+    <div id="pct">0%</div>
+  </div>
+
+  <div class="box hide" id="s3">
+    <div class="big">✅ FAST GESCHAFFT!</div>
+    <p>Nur noch <span class="red">47 Umfragen</span> ausfüllen, 12 Apps installieren und dein Passwort an deine Oma schicken.</p>
+    <button id="fin">ALLES ERLEDIGT, ROBOUX BITTE 🙏</button>
+    <div class="box hide" id="errbox" style="background:#fff3f3;border-color:#d40000;margin-top:14px" role="alert">
+      <b class="red">⚠️ FEHLER 402: Roboux nicht gefunden</b>
+      <p style="margin:6px 0 0">Der Server hat leider keine Roboux (weil es keine gibt).</p>
+    </div>
+  </div>
+
+  <div class="box rev hide" id="s4" role="status">
+    <h2>🚨 SCAM! (zum Glück nur ein Witz)</h2>
+    <p>Hier wurde nichts abgeschickt, gespeichert oder gesendet. Aber so erkennst du echte Fallen:</p>
+    <ul>
+      <li>Niemand verschenkt Spielwährung "gratis". Echte Robux kauft man nur im offiziellen Shop.</li>
+      <li>Wer dein Passwort, einen Code oder einen Login will, will deinen Account.</li>
+      <li>Countdowns, "nur noch 3 Plätze" und Zufallsgewinne sollen dich hetzen.</li>
+      <li>Umfragen und App-Installationen bringen dem Betreiber Geld, nicht dir.</li>
+      <li>Komische Schreibweise der Domain = sofort wegklicken.</li>
+    </ul>
+    <button id="again" style="background:#ff0">Nochmal reinfallen 🔁</button>
+  </div>
+
+  <small>Parodie / Satire. Nicht mit Roblox verbunden, keine echten Roboux, kein Datenversand. Alles bleibt in deinem Browser.</small>
+</div>
+
+<script>
+(function(){
+  var $=function(i){return document.getElementById(i)};
+  var t=59,tm=$('timer');
+  setInterval(function(){t=t<=0?59:t-1;tm.textContent='00:00:'+(t<10?'0':'')+t},1000);
+  setInterval(function(){$('users').textContent=(1000+Math.floor(Math.random()*900)).toLocaleString('de-DE')},1800);
+
+  var msgs=["Verbinde mit Roboux-Server…","Hacke Roblox (nicht wirklich)…","Suche deinen Spielernamen…","Drucke Roboux aus…","Bestehe Bot-Check gegen Bots…","Bestechen den Algorithmus…","Warte auf Sponsor (Nigerianischer Prinz)…","Fast fertig! (Lüge)"];
+  function show(id){['s1','s2','s3','s4'].forEach(function(x){$(x).classList.add('hide')});$(id).classList.remove('hide')}
+
+  $('go').onclick=function(){
+    var n=$('name').value.trim();
+    if(!n){$('name').focus();$('name').placeholder='Name fehlt, Chef!';return}
+    if(!$('ok').checked){alert('Bitte erst bestätigen, dass du ein Roboux bist.');return}
+    show('s2');
+    var p=0,i=0,f=$('fill');
+    var iv=setInterval(function(){
+      p+=Math.random()*7;
+      if(p>=99){p=99;clearInterval(iv);setTimeout(function(){show('s3')},1200)}
+      f.style.width=p+'%';$('pct').textContent=Math.floor(p)+'%';
+      var k=Math.min(msgs.length-1,Math.floor(p/13));$('msg').textContent=msgs[k];
+    },350);
+  };
+  $('fin').onclick=function(){
+    $('fin').disabled=true;
+    $('errbox').classList.remove('hide');
+    setTimeout(function(){show('s4')},1800);
+  };
+  $('again').onclick=function(){$('ok').checked=false;show('s1')};
+})();
+</script>
+</body>
+</html>
