@@ -1,0 +1,33 @@
+@font-face {
+    font-family: "MinecraftTen";
+    src: url("../../../uni-src/font/MC10/MinecraftTen-VGORe.ttf") format("truetype");
+    font-display: swap;
+}
+
+:root {
+    --bg: #050507;
+    --card: #141416;
+    --hi: #4b4560;
+    --lo: #000;
+    --lav: #c9b8ff;
+    --lav2: #9d86e6;
+    --txt: #ffffff;
+    --mut: #a9a4b8;
+    color-scheme: dark;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    background: var(--bg);
+    color: var(--txt);
+    font-family: 'MinecraftTen', ui-monospace, Menlo, Consolas, monospace;
+    overflow: hidden;
+}

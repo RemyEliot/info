@@ -54,3 +54,36 @@
 
     requestAnimationFrame(draw);
 })();
+
+// some charitz
+
+
+const charities = [
+    "https://www.unicef.org/donate",
+    "https://www.savethechildren.org/",
+    "https://www.doctorswithoutborders.org/get-involved/ways-to-give",
+    "https://www.oxfam.org/en/donate",
+    "https://www.icrc.org/en/donate",
+    "https://www.ifrc.org/donate",
+    "https://water.org/donate/",
+    "https://donate.wck.org/campaign/863863/donate",
+    "https://www.unhcr.org/",
+    "https://www.wfp.org/support-us",
+    "https://www.rescue.org/",
+    "https://www.brac.net/"
+];
+
+document.getElementById("charity-button")
+    .addEventListener("click", function(event) {
+        event.preventDefault();
+
+        const randomIndex = Math.floor(
+            Math.random() * charities.length
+        );
+
+        window.open(
+            charities[randomIndex],
+            "_blank",
+            "noopener,noreferrer"
+        );
+    });
