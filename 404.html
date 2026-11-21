@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>404: Page not found</title>
+    <link rel="stylesheet" href="404.css">
+</head>
+<body>
+<a id="wrap" href="/" aria-label="Error 404 – page not found. Go to the homepage">
+    <span id="num" aria-hidden="true">404</span>
+    <span class="sub" id="s1" aria-hidden="true">ERROR 0x194: PAGE NOT FOUND</span>
+</a>
+
+<script>
+    (function () {
+        var wrap = document.getElementById('wrap');
+        var num = document.getElementById('num');
+        var subs = document.querySelectorAll('.sub');
+        var ctx = document.createElement('canvas').getContext('2d');
+
+        function ink(text, weight, size, family) {
+            ctx.font = weight + ' ' + size + 'px ' + family;
+            var m = ctx.measureText(text);
+            return { l: -m.actualBoundingBoxLeft, w: m.actualBoundingBoxLeft + m.actualBoundingBoxRight };
+        }
+
+        function fit() {
+            var ns = getComputedStyle(num);
+            var a = ink(num.textContent, ns.fontWeight, parseFloat(ns.fontSize), ns.fontFamily);
+            num.style.marginLeft = (-a.l) + 'px';
+            wrap.style.width = a.w + 'px';
+
+            Array.prototype.forEach.call(subs, function (el) {
+                var s = getComputedStyle(el);
+                var b = ink(el.textContent, s.fontWeight, 100, s.fontFamily);
+                var size = 100 * a.w / b.w;
+                el.style.fontSize = size + 'px';
+                el.style.marginLeft = (-b.l * size / 100) + 'px';
+                el.style.visibility = 'visible';
+            });
+        }
+
+        fit();
+        addEventListener('resize', fit);
+        addEventListener('load', fit);
+        if (window.ResizeObserver) new ResizeObserver(fit).observe(document.body);
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+    })();
+</script>
+</body>
+</html>
